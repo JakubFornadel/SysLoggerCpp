@@ -34,8 +34,10 @@ cmake --build .
 
 # run example
 ./SyslogExample
-```
 
+# go back to the project root
+cd ..
+```
 
 ### Custom syslog file
 To redirect messages from example, copy config files as below:
@@ -43,17 +45,17 @@ To redirect messages from example, copy config files as below:
 sudo cp examples/etc/rsyslog.d/99-custom-syslog.conf /etc/rsyslog.d/
 sudo cp examples/etc/logrotate.d/custom-syslog /etc/logrotate.d/
 
-sudo rervice rsyslog restart
-sudo rervice logrotate restart
+sudo service rsyslog restart
+sudo service logrotate restart
 ```
 Prepare directory for custom syslog file and its archives:
 ```Shell
 sudo mkdir -p /var/log/custom-syslog/
 sudo chown -R syslog:adm /var/log/custom-syslog/
 ```
-Now if you run ./SyslogExample, its syslog messages are redirected to the
+Now if you run ./build/SyslogExample, its syslog messages are redirected to the
 ```Shell
-/var/log/custom-syslog/custom-syslog-example.log
+cat /var/log/custom-syslog/custom-syslog-example.log
 ```
 
 ## Usage
