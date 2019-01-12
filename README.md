@@ -88,9 +88,7 @@ int main(void) {
 
   // Creates logger, specifies application name as "custom-syslog-example". Application name can be used for
   // filtering application specific messages from /var/log/syslog and redirecting it to the custom file
-  SysLogger logger("custom-syslog-example" /* application name */,
-                   LOG_DEBUG               /* min. log level */,
-                   "custom-prefix:"        /* message prefix */);
+  SysLogger logger("custom-syslog-example");
 
   // logger accepts any TYPE of parameter to be printed, but it has to overload
   // std::ostream& operator <<(std::ostream& stream, const TYPE& obj)
