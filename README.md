@@ -10,25 +10,11 @@ SysLoggerC++ writes messages to the /var/log/syslog. These messages can be also 
 redirected to the custom file. For this purpose special rsyslog and logrotate
 configuration files must be created and copied into the appropriate directories. 
 
-### Custom syslog file
-To redirect messages from 
-example:
-```Shell
-sudo cp examples/etc/rsyslog.d/99-custom-syslog.conf /etc/rsyslog.d/
-sudo cp examples/etc/logrotate.d/custom-syslog /etc/logrotate.d/
-
-sudo rervice rsyslog restart
-sudo rervice logrotate restart
-```
-Prepare directory for custom syslog file and its archives:
-```Shell
-sudo mkdir -p /var/log/custom-syslog/
-sudo chown -R syslog:adm /var/log/custom-syslog/
-```
-Now if you run ./SyslogExample, its syslog messages are redirected to the
-```Shell
-/var/log/custom-syslog/custom-syslog-example.log
-```
+Multiple parameters can be specified:
+* application name that syslog messages belong to
+* min. log level
+* custom prefix that is displayed before actual messages
+* syslog options and facilities
 
 ## Build instructions
 Use git to clone the repository.
@@ -48,6 +34,26 @@ cmake --build .
 
 # run example
 ./SyslogExample
+```
+
+
+### Custom syslog file
+To redirect messages from example, copy config files as below:
+```Shell
+sudo cp examples/etc/rsyslog.d/99-custom-syslog.conf /etc/rsyslog.d/
+sudo cp examples/etc/logrotate.d/custom-syslog /etc/logrotate.d/
+
+sudo rervice rsyslog restart
+sudo rervice logrotate restart
+```
+Prepare directory for custom syslog file and its archives:
+```Shell
+sudo mkdir -p /var/log/custom-syslog/
+sudo chown -R syslog:adm /var/log/custom-syslog/
+```
+Now if you run ./SyslogExample, its syslog messages are redirected to the
+```Shell
+/var/log/custom-syslog/custom-syslog-example.log
 ```
 
 ## Usage
