@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.2 )
 add_compile_options("-Wall" "-Werror")
 set( CMAKE_CXX_STANDARD 17 )
 
-add_library(SysLoggerCpp SHARED SysLogger.cpp)
+add_library(SysLoggerCpp SHARED src/SysLogger.cpp)
 target_include_directories(SysLoggerCpp PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 install(TARGETS
