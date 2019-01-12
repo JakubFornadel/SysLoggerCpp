@@ -20,7 +20,7 @@ Multiple parameters can be specified:
 Use git to clone the repository.
 ```Shell
 git clone https://github.com/JakubFornadel/SysLoggerCpp.git
-cd SysLogger
+cd SysLoggerCpp
 ```
 
 A CMake configuration file is provided for multiplatform support.
