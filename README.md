@@ -19,7 +19,7 @@ Multiple parameters can be specified:
 ## Build instructions
 Use git to clone the repository.
 ```Shell
-git clone https://github.com/JakubFornadel/SysLogger.git
+git clone https://github.com/JakubFornadel/SysLoggerCpp.git
 cd SysLogger
 ```
 
