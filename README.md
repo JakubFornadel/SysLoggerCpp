@@ -9,7 +9,8 @@ Note: For C++14 just replace std::optional with std::experimental::optional in c
 SysLoggerC++ writes messages to the /var/log/syslog. These messages can be also filtered and 
 redirected to the custom file. For this purpose special rsyslog and logrotate
 configuration files must be created and copied into the appropriate directories. 
-###Custom syslog file
+
+### Custom syslog file
 To redirect messages from 
 example:
 ```Shell
@@ -29,7 +30,7 @@ Now if you run ./SyslogExample, its syslog messages are redirected to the
 /var/log/custom-syslog/custom-syslog-example.log
 ```
 
-##Build instructions
+## Build instructions
 Use git to clone the repository.
 ```Shell
 git clone https://github.com/JakubFornadel/SysLogger.git
@@ -49,7 +50,7 @@ cmake --build .
 ./SyslogExample
 ```
 
-##Usage
+## Usage
 ```C++
 #include <SysLogger.hpp>
 #include <string>
@@ -99,4 +100,3 @@ int main(void) {
   logger.info("Finish logging...");
 }
 ```
-
